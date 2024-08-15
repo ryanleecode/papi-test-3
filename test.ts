@@ -69,7 +69,7 @@ const f = fs.createWriteStream("test.log");
       )
   );
 
-  client.destroy()
+  client.destroy();
 })();
 
 const retryOnStale =
@@ -85,11 +85,7 @@ const retryOnStale =
   (source: Observable<TxEvent>) =>
     source.pipe(
       mergeMap((e) => {
-        if (
-          e.type === "txBestBlocksState" &&
-          e.found === false &&
-          e.isValid === false
-        ) {
+        if (e.type === "txBestBlocksState" && !e.found && !e.isValid) {
           return throwError(() => "stale");
         }
 
