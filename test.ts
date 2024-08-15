@@ -68,6 +68,8 @@ const f = fs.createWriteStream("test.log");
         filter((e) => e.type === "txBestBlocksState" && e.found === true)
       )
   );
+
+  client.destroy()
 })();
 
 const retryOnStale =
