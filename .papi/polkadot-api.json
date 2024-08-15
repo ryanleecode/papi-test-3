@@ -1,0 +1,14 @@
+{
+  "version": 0,
+  "descriptorPath": ".papi/descriptors",
+  "entries": {
+    "westend2_people": {
+      "chainSpec": "westend2_people.json",
+      "metadata": ".papi/metadata/westend2_people.scale"
+    },
+    "polkadot_people": {
+      "chain": "polkadot_people",
+      "metadata": ".papi/metadata/polkadot_people.scale"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "people-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsx test.ts",
+    "postinstall": "papi"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polkadot-api/descriptors": "file:.papi/descriptors",
+    "@polkadot-api/logs-provider": "^0.0.3",
+    "@polkadot-api/signer": "~0.1.3",
+    "@polkadot-api/utils": "~0.1.1",
+    "@polkadot-labs/hdkd": "~0.0.6",
+    "@polkadot-labs/hdkd-helpers": "~0.0.6",
+    "polkadot-api": "~0.13.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.3.0",
+    "tsx": "^4.17.0"
+  }
+}
