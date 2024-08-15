@@ -1,7 +1,3 @@
 {
-  "compilerOptions": {
-    "module": "NodeNext",
-    "target": "ESNext",
-    "moduleResolution": "NodeNext"
-  }
+  "extends": "@total-typescript/tsconfig/tsc/no-dom/app"
 }

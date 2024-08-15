@@ -2,6 +2,7 @@
   "name": "people-backend",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "tsx test.ts",
@@ -21,6 +22,7 @@
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
+    "@total-typescript/tsconfig": "^1.0.4",
     "@types/node": "^22.3.0",
     "tsx": "^4.17.0",
     "typescript": "^5.5.4"

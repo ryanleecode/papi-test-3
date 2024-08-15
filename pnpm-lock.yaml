@@ -33,6 +33,9 @@ importers:
         specifier: ^7.8.1
         version: 7.8.1
     devDependencies:
+      '@total-typescript/tsconfig':
+        specifier: ^1.0.4
+        version: 1.0.4
       '@types/node':
         specifier: ^22.3.0
         version: 22.3.0
@@ -423,6 +426,9 @@ packages:
   '@sindresorhus/merge-streams@4.0.0':
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
+
+  '@total-typescript/tsconfig@1.0.4':
+    resolution: {integrity: sha512-fO4ctMPGz1kOFOQ4RCPBRBfMy3gDn+pegUfrGyUFRMv/Rd0ZM3/SHH3hFCYG4u6bPLG8OlmOGcBLDexvyr3A5w==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -1482,6 +1488,8 @@ snapshots:
   '@sec-ant/readable-stream@0.4.1': {}
 
   '@sindresorhus/merge-streams@4.0.0': {}
+
+  '@total-typescript/tsconfig@1.0.4': {}
 
   '@types/estree@1.0.5': {}
 

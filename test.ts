@@ -1,5 +1,5 @@
 import { westend2_people } from "@polkadot-api/descriptors";
-import { Binary, createClient, TxEvent } from "polkadot-api";
+import { Binary, createClient } from "polkadot-api";
 import { getWsProvider } from "polkadot-api/ws-provider/node";
 import { sr25519CreateDerive } from "@polkadot-labs/hdkd";
 import {
@@ -8,26 +8,20 @@ import {
   ss58Address,
 } from "@polkadot-labs/hdkd-helpers";
 import { getPolkadotSigner } from "@polkadot-api/signer";
-import { toHex } from "@polkadot-api/utils";
 import { withLogsRecorder } from "@polkadot-api/logs-provider";
 import * as fs from "node:fs";
 import {
-  delay,
   filter,
   firstValueFrom,
-  mergeMap,
-  Observable,
-  of,
-  retry,
   tap,
-  throwError,
 } from "rxjs";
+import { retryOnStale } from "./utils.js";
 
 const f = fs.createWriteStream("test.log");
 
 (async () => {
   const mnemonic =
-    "XXXXXXXXXXXXXXXXXXXXX";
+    "XXXXXX";
 
   const client = createClient(
     withLogsRecorder(
@@ -71,34 +65,3 @@ const f = fs.createWriteStream("test.log");
 
   client.destroy();
 })();
-
-const retryOnStale =
-  ({
-    maxRetries,
-    initialDelay,
-    factor = 2.0,
-  }: {
-    maxRetries: number;
-    initialDelay: number;
-    factor?: number;
-  }) =>
-  (source: Observable<TxEvent>) =>
-    source.pipe(
-      mergeMap((e) => {
-        if (e.type === "txBestBlocksState" && !e.found && !e.isValid) {
-          return throwError(() => "stale");
-        }
-
-        return of(e);
-      }),
-      retry({
-        count: maxRetries,
-        delay: (error, retryCount) => {
-          if (error === "stale") {
-            return of(delay(initialDelay * Math.pow(factor, retryCount)));
-          }
-
-          return throwError(() => error);
-        },
-      })
-    );
