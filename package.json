@@ -18,13 +18,14 @@
     "@polkadot-api/utils": "~0.1.1",
     "@polkadot-labs/hdkd": "~0.0.6",
     "@polkadot-labs/hdkd-helpers": "~0.0.6",
-    "polkadot-api": "~0.13.2",
+    "polkadot-api": "^1.0.0",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
     "@total-typescript/tsconfig": "^1.0.4",
     "@types/node": "^22.3.0",
     "tsx": "^4.17.0",
+    "type-fest": "^4.24.0",
     "typescript": "^5.5.4"
   }
 }
