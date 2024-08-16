@@ -1,4 +1,4 @@
 ```sh
 pnpm i
-pnpm test
+npx tsc --noEmit
 ```
